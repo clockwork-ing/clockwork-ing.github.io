@@ -22,6 +22,7 @@
 
 .headshot {
     text-align: center;
+    thumbnail-border-radius: 20px;
 }
 
 .thumbnail-border-radius {
