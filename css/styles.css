@@ -17,10 +17,14 @@
 }
 
 .icon-secondary {
-    color: #b5bb76;
+    color: #D3D3D3;
 }
 
 .primary-color {
+    background-color: #7c76bb;
+}
+
+.secondary-color {
     background-color: #7c76bb;
 }
 
