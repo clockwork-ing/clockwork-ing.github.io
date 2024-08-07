@@ -54,3 +54,22 @@
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
 }
+
+.case-study-highlight {
+    width: 18rem;
+}
+
+.case-study-client-box {
+    width: 14rem;
+}
+
+.prose-content {
+    max-width: 80%;
+
+    .highlight {
+        pre {
+            padding: 16px;
+            border-radius: 8px;
+        }
+    }
+}
