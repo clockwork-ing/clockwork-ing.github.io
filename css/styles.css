@@ -20,6 +20,10 @@
     color: #D3D3D3;
 }
 
+.border-primary {
+    border-color: #7c76bb
+}
+
 .primary-color {
     background-color: #7c76bb;
 }
