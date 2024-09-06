@@ -86,3 +86,7 @@
         }
     }
 }
+
+.slick-dots li.slick-active  {
+    color: #7c76bb; !important;
+}
