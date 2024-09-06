@@ -87,6 +87,10 @@
     }
 }
 
-.slick-dots li.slick-active  {
-    color: #7c76bb; !important;
+.slick-dots li button:before {
+    color: mediumpurple;
+}
+
+.slick-dots li.slick-active button:before {
+    color: mediumpurple !important;
 }
