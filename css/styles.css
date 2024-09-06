@@ -78,7 +78,6 @@
         margin-top: 2rem;
     }
 
-
     .highlight {
         pre {
             padding: 16px;
@@ -93,4 +92,23 @@
 
 .slick-dots li.slick-active button:before {
     color: mediumpurple !important;
+}
+
+.slick-prev:before {
+    color:  #7c76bb;
+}
+
+.slick-next:before {
+    color:  #7c76bb;
+}
+.slick-prev:before {
+    content: "<";
+    color: red;
+    font-size: 30px;
+}
+
+.slick-next:before {
+    content: ">";
+    color: red;
+    font-size: 30px;
 }
