@@ -67,6 +67,10 @@
             margin-top: 1rem;
         }
     }
+
+    .card {
+        page-break-inside: avoid;
+    }
 }
 
 .cards {
