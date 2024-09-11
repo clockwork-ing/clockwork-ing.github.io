@@ -83,7 +83,7 @@
 }
 
 .case-study-highlight {
-    width: 18rem;
+    min-width: 18rem;
 }
 
 .case-study-client-box {
