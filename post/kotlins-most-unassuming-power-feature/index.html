@@ -318,7 +318,7 @@
 <p><strong>&ldquo;Companion Objects are not just placeholders for constants and other static state; they allow for new strategies to help organise our code or to provide
 reusable factory and validation features.&rdquo;</strong></p>
 </blockquote>
-<!-- raw HTML omitted -->
+<hr/>
 <p>Of all the features that developers enthuse about in the Kotlin world, one of the ones that you hear about least is the
 humble <a href="https://kotlinlang.org/docs/reference/object-declarations.html#companion-objects">Companion Object</a>. On the face of it, they are merely a convenient
 stand-in for where you could put static state.
@@ -416,14 +416,14 @@ for the Result4k construction case:</p>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> order = <span style="color:#a6e22e">OrderDate</span>.parse(<span style="color:#e6db74">&#34;2000-01-01&#34;</span>)
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">val</span> delivery = <span style="color:#a6e22e">DeliveryDate</span>.asResult(<span style="color:#e6db74">&#34;2099-12-31&#34;</span>)
-</span></span></code></pre></div><!-- raw HTML omitted -->
+</span></span></code></pre></div><hr/>
 <h3 id="summary">Summary</h3>
 <p>I&rsquo;ve covered only a couple of use-cases above which I&rsquo;ve come across in the last few years of using Kotlin, but this is bound to be the tip of the iceberg and
 there are bound to be a bunch more just waiting to be discovered. The realisation of these abilities has reinforced my belief that we should be scratching
 beneath the surface in Kotlin features to see what it possible.</p>
 <p>As with a lot of inventions, it&rsquo;s possible that even JetBrains didn&rsquo;t really appreciate the depth which would be unlocked by adding such a humble feature - I&rsquo;d
 be fascinated to learn of any of these types of uses in the Kotlin standard libraries.</p>
-<!-- raw HTML omitted -->
+<hr/>
 <h3 id="ps">PS.</h3>
 <p>For a practical example of how the these type-creation techniques are used the real world, you can take a look at the
 foundational <a href="https://github.com/fork-handles/forkhandles/tree/trunk/values4k">Values4k</a> library, which uses them to provide instantiation, validation, parsing
