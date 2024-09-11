@@ -27,6 +27,7 @@
 .primary-color {
     background-color: #7c76bb;
 }
+
 .secondary-color {
     background-color: #7c76bb;
 }
@@ -95,8 +96,30 @@
     padding-bottom: 2rem !important;
 }
 
-.case-study-highlight {
-    min-width: 18rem;
+.d-flex {
+    flex-wrap: nowrap !important; /* Prevent wrapping */
+}
+
+.case-study-client-box {
+    width: 22%;
+    margin: 0 15px;
+}
+
+.d-flex {
+    /*justify-content: space-around;*/
+    align-items: center;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card.case-study-highlight {
+    min-width: 15rem;
+    max-width: 15rem;
+    height: 10rem;
+    flex-wrap: nowrap !important;
+    box-sizing: border-box;
 }
 
 .case-study-client-box {
@@ -131,12 +154,13 @@
 }
 
 .slick-prev:before {
-    color:  #7c76bb;
+    color: #7c76bb;
 }
 
 .slick-next:before {
-    color:  #7c76bb;
+    color: #7c76bb;
 }
+
 .slick-prev:before {
     content: "<";
     color: red;
