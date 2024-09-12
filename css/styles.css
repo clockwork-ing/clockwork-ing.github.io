@@ -110,6 +110,7 @@
 .no-links a {
     text-decoration: none;
     color: inherit;
+    pointer-events: none;
 }
 
 .case-study-client-box {
