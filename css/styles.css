@@ -70,6 +70,46 @@
     .card {
         page-break-inside: avoid;
     }
+
+    .card-body {
+        .fs-2 {
+            font-size: 1.2rem !important;
+        }
+
+        .fs-5 {
+            font-size: 1rem !important;
+        }
+
+        .fs-6 {
+            font-size: 0.8rem !important;
+        }
+    }
+
+    .card.case-study-highlight {
+        min-width: 11rem !important;
+        max-width: 11rem !important;
+        height: 8rem !important;
+    }
+
+    .case-study-client-box {
+        margin: 0 0.5rem !important;
+        min-width: 8rem !important;
+        max-width: 11rem !important;
+        .card-body {
+            font-size: 0.8rem !important;
+        }
+    }
+
+    .hero-image {
+        img {
+            width: 80% !important;
+            height: 80% !important;
+        }
+    }
+
+    .hero-title {
+        font-size: 3.2em !important;
+    }
 }
 
 .pagebreak {
@@ -128,9 +168,10 @@
 }
 
 .card.case-study-highlight {
-    min-width: 15rem;
+    min-width: 30%;
     max-width: 15rem;
-    height: 10rem;
+    min-height: 5rem;
+    max-height: 10rem;
     flex-wrap: nowrap !important;
     box-sizing: border-box;
 }
