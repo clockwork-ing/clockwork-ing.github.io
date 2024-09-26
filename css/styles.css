@@ -86,9 +86,8 @@
     }
 
     .card.case-study-highlight {
-        min-width: 11rem !important;
-        max-width: 11rem !important;
-        height: 8rem !important;
+        margin: 1rem 0 1rem 0 ;
+        min-height: 13rem;
     }
 
     .case-study-client-box {
@@ -154,7 +153,6 @@
 }
 
 .d-flex {
-    /*justify-content: space-around;*/
     align-items: center;
 }
 
@@ -163,12 +161,9 @@
 }
 
 .card.case-study-highlight {
+    margin: 1rem;
     min-width: 30%;
-    max-width: 15rem;
-    min-height: 5rem;
-    max-height: 10rem;
-    flex-wrap: nowrap !important;
-    box-sizing: border-box;
+    min-height: 11rem;
 }
 
 .case-study-client-box {
