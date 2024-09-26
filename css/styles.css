@@ -153,11 +153,6 @@
     pointer-events: none;
 }
 
-.case-study-client-box {
-    width: 22%;
-    margin: 0 15px;
-}
-
 .d-flex {
     /*justify-content: space-around;*/
     align-items: center;
@@ -177,7 +172,8 @@
 }
 
 .case-study-client-box {
-    width: 14rem;
+    min-width: 10rem;
+    margin: 1rem;
 }
 
 .prose-content {
