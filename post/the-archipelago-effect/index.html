@@ -71,13 +71,13 @@
   <meta name="twitter:image" content="http://localhost:1313/post/the-archipelago-effect/image.webp">
   <meta name="twitter:title" content="The Archipelago Effect: Connecting Microservice Islands with a Hexagonal Core">
   <meta name="twitter:description" content="TL;DR “Avoid excessive microservice fragmentation by grouping affiliated domain services and workers into individual deployable units.”
-Ever since Microservices became a “thing”, the industry has spent it’s time fragmenting monolithic applications into ever smaller and smaller pieces. The promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more complex - the more services you have, the more complex both the interactions between them become, the more difficult to sensibly integrate and observe the codebase becomes, and the more difficult it becomes to maintain a coherent architecture.">
+Ever since Microservices became a “thing”, the industry has spent it’s time fragmenting monolithic applications into seemingly ever smaller and smaller pieces. The promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more sobering - the more services you have, the more complex both the interactions between them become, the more difficult to sensibly integrate and observe the codebase becomes, and the more difficult it becomes to maintain a coherent architecture.">
 
 <meta property="og:url" content="http://localhost:1313/post/the-archipelago-effect/">
   <meta property="og:site_name" content="Clockwork">
   <meta property="og:title" content="The Archipelago Effect: Connecting Microservice Islands with a Hexagonal Core">
   <meta property="og:description" content="TL;DR “Avoid excessive microservice fragmentation by grouping affiliated domain services and workers into individual deployable units.”
-Ever since Microservices became a “thing”, the industry has spent it’s time fragmenting monolithic applications into ever smaller and smaller pieces. The promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more complex - the more services you have, the more complex both the interactions between them become, the more difficult to sensibly integrate and observe the codebase becomes, and the more difficult it becomes to maintain a coherent architecture.">
+Ever since Microservices became a “thing”, the industry has spent it’s time fragmenting monolithic applications into seemingly ever smaller and smaller pieces. The promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more sobering - the more services you have, the more complex both the interactions between them become, the more difficult to sensibly integrate and observe the codebase becomes, and the more difficult it becomes to maintain a coherent architecture.">
   <meta property="og:locale" content="en_us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -90,10 +90,10 @@ Ever since Microservices became a “thing”, the industry has spent it’s tim
 
   <meta itemprop="name" content="The Archipelago Effect: Connecting Microservice Islands with a Hexagonal Core">
   <meta itemprop="description" content="TL;DR “Avoid excessive microservice fragmentation by grouping affiliated domain services and workers into individual deployable units.”
-Ever since Microservices became a “thing”, the industry has spent it’s time fragmenting monolithic applications into ever smaller and smaller pieces. The promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more complex - the more services you have, the more complex both the interactions between them become, the more difficult to sensibly integrate and observe the codebase becomes, and the more difficult it becomes to maintain a coherent architecture.">
+Ever since Microservices became a “thing”, the industry has spent it’s time fragmenting monolithic applications into seemingly ever smaller and smaller pieces. The promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more sobering - the more services you have, the more complex both the interactions between them become, the more difficult to sensibly integrate and observe the codebase becomes, and the more difficult it becomes to maintain a coherent architecture.">
   <meta itemprop="datePublished" content="2024-07-01T00:00:00+00:00">
   <meta itemprop="dateModified" content="2024-07-01T00:00:00+00:00">
-  <meta itemprop="wordCount" content="227">
+  <meta itemprop="wordCount" content="998">
   <meta itemprop="image" content="http://localhost:1313/post/the-archipelago-effect/image.webp">
   <meta itemprop="keywords" content="Architecture,Microservices">
 
@@ -327,17 +327,86 @@ Ever since Microservices became a “thing”, the industry has spent it’s tim
 <blockquote>
 <p><strong>&ldquo;Avoid excessive microservice fragmentation by grouping affiliated domain services and workers into individual deployable units.&rdquo;</strong></p>
 </blockquote>
-<p>Ever since Microservices became a &ldquo;thing&rdquo;, the industry has spent it&rsquo;s time fragmenting monolithic applications into ever smaller and smaller pieces. The
-promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more complex - the more
+<p>Ever since Microservices became a &ldquo;thing&rdquo;, the industry has spent it&rsquo;s time fragmenting monolithic applications into seemingly ever smaller and smaller pieces. The
+promise of independent deployability and scalability has been a siren call to many organisations, but the reality has been a little more sobering - the more
 services you have, the more complex both the interactions between them become, the more difficult to sensibly integrate and observe the codebase becomes, and
 the more difficult it becomes to maintain a coherent architecture.</p>
 <p>Much like the style of micro-packages famous in the JavaScript world - where a single function or class is published as a separate package - the same can be
-said for how microservices - where deployments based around a single database table or a single domain entity are a common anti-pattern in use.</p>
-<p>In this post, we&rsquo;ll explore the concept of the &ldquo;Archipelago Architecture&rdquo; - where we group related services together into a single deployable unit, and how we
-can use Hexagonal Architecture to produce a core that can be shared between these services. These &ldquo;islands&rdquo; of services exist in a single repository or monorepo
+said for how microservices - where deployments based around a single database table or a single domain entity are a common anti-pattern in use. It turns out that the promise of independent scaling is often taken too far - resulting in operating models and systems which are far too granular to be effectively developed.</p>
+<p>In this post, we&rsquo;ll explore the concept of the &ldquo;Archipelago Architecture&rdquo; - which is a style of  deployment model we can use to retain the benefits of fairly granular services without drowning in the complexity of microservices. We&rsquo;ll also look at how this system design pattern has an effect on code organisation, testability and scalability issues.</p>
+<h3 id="an-example-system">An example system</h3>
+<h3 id="introducing-the-term">Introducing the term</h3>
+<p>, and how we can use Hexagonal Architecture to produce a core that can be shared between these services. These &ldquo;islands&rdquo; of services exist in a single repository or monorepo
 module, but share a common core that can be used to provide shared functionality, such as observability, configuration (including secrets management), and data
 access.</p>
-<h3 id="heading"></h3>
+<p>Archipelago Architecture draws inspiration from the geographical concept of an archipelago - a cluster of islands scattered across a body of water, often in chains. In this architectural pattern, various components of a system are envisioned as the individual islands, each functioning independently yet interconnected to form a cohesive whole.</p>
+<p>Much like how each island in an archipelago has its own unique ecosystem, like traditional microservices each component in Archipelago Architecture is designed to be independently deployable, self-contained and serving a particular function within the domain.</p>
+<p>So far, sounds like microservices, right? Well not quite - because instead</p>
+<p>Title: Exploring Archipelago Architecture: A Modern Approach to Distributed Systems</p>
+<p>Introduction</p>
+<pre><code>•	Hook: Highlight the growing complexity in modern software systems and the need for scalable, flexible architectures.
+•	Introduce Archipelago Architecture: Briefly define what Archipelago Architecture is, its name metaphor, and why it’s becoming relevant in distributed systems.
+•	Thesis: Discuss how Archipelago Architecture can help address issues of modularity, scaling, and independent evolution in software design.
+</code></pre>
+<ol>
+<li>
+<p>What is Archipelago Architecture?</p>
+<p>•	Definition: Explain the basic concept of Archipelago Architecture, drawing parallels to a group of islands that are loosely connected but independently functional.
+•	Key Characteristics:
+•	Decoupled Components: Each “island” (component) is autonomous, serving a specific domain.
+•	Intercommunication: Islands communicate with each other through well-defined APIs, similar to distributed microservices.
+•	Independent Scaling: Components scale independently to meet their respective demands.</p>
+</li>
+<li>
+<p>Archipelago vs. Monolithic and Microservices Architectures</p>
+<p>•	Monolithic Approach: Explain how traditional monolithic architectures tightly couple components, leading to challenges in scaling and maintainability.
+•	Microservices Architecture: Compare with microservices, noting that Archipelago Architecture extends this by further isolating and decentralizing responsibilities.
+•	Key Differences:
+•	Autonomy: Archipelago components are even more decoupled than microservices, with more independence in decision-making.
+•	Data Ownership: Each “island” has ownership over its own data, reducing shared dependencies.</p>
+</li>
+<li>
+<p>Key Principles of Archipelago Architecture</p>
+<p>•	Autonomy of Modules: Explain how each island operates independently, handling its domain-specific logic, with minimal dependencies on others.
+•	Resilient Inter-island Communication: Discuss how communication between islands is designed to handle failures gracefully (message queues, event-driven patterns).
+•	Separation of Concerns: Highlight how the architecture encourages a clear boundary between different domains of the system.
+•	Data and State Management: Talk about how each island owns its own data, and the patterns to ensure consistency and reliability across the system.</p>
+</li>
+<li>
+<p>Benefits of Archipelago Architecture</p>
+<p>•	Scalability: Each island can be scaled independently based on its resource requirements.
+•	Modularity: Explain how this modular structure allows for easier updates, maintenance, and faster development.
+•	Fault Isolation: If one island fails, it doesn’t bring down the entire system.
+•	Team Autonomy: Teams can work on individual islands in parallel, without being blocked by other teams.</p>
+</li>
+<li>
+<p>Challenges and Considerations</p>
+<p>•	Complexity of Coordination: Discuss how the increased independence of islands adds complexity in communication, orchestration, and monitoring.
+•	Consistency: Highlight potential issues with data consistency across islands and strategies (e.g., eventual consistency) to mitigate these challenges.
+•	Deployment and Versioning: Managing independent deployments and maintaining compatibility between versions of islands.</p>
+</li>
+<li>
+<p>Real-World Use Cases</p>
+<p>•	Example 1: E-commerce Platform - Breaking down an online retail platform into independent islands (e.g., inventory, payments, customer service).
+•	Example 2: Financial Services - Independent financial modules that handle different products or regulatory requirements.
+•	Case Study: Provide a brief case study of a company or product that has successfully implemented Archipelago Architecture.</p>
+</li>
+<li>
+<p>How to Implement Archipelago Architecture</p>
+<p>•	Designing Islands: Guidelines on how to identify boundaries and design autonomous modules.
+•	Choosing Communication Protocols: Discuss communication strategies like REST, gRPC, or event-driven patterns.
+•	Deployment Strategies: Best practices for deploying and managing independent modules (e.g., using Kubernetes, CI/CD pipelines).
+•	Monitoring and Observability: Explain how to monitor distributed components and ensure system health.</p>
+</li>
+<li>
+<p>Conclusion</p>
+<p>•	Recap the Value: Summarize the benefits of Archipelago Architecture in creating scalable, maintainable, and resilient systems.
+•	Future Outlook: Discuss how this architecture might evolve as distributed systems grow in complexity.
+•	Call to Action: Encourage readers to explore whether Archipelago Architecture is right for their use case, and suggest tools or resources for further reading.</p>
+</li>
+</ol>
+<p>e shared functionality, such as observability, configuration (including secrets management), and data
+access.</p>
 
         </div>
       </div>
