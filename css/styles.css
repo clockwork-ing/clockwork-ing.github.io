@@ -128,6 +128,24 @@
     thumbnail-border-radius: 20px;
 }
 
+@media only screen and (min-width: 62rem) and (max-width: 74.9375rem) {
+  ul.carousel li.slick-slide {
+    height: 28.75rem;
+  }
+}
+
+@media only screen and (min-width: 75rem) and (max-width: 87.4375rem) {
+  ul.carousel li.slick-slide {
+    height: 30.9375rem;
+  }
+}
+
+@media only screen and (min-width: 87.5rem) {
+  ul.carousel li.slick-slide {
+    height: 33.125rem;
+  }
+}
+
 .thumbnail-border-radius {
     border-radius: 20px;
 }
