@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hiring on Clockwork</title>
+    <link>http://localhost:1313/tags/hiring/</link>
+    <description>Recent content in Hiring on Clockwork</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/hiring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Engineered for Simplicity: The Adaptable Coding Interview</title>
+      <link>http://localhost:1313/post/engineered-for-simplicity/</link>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/engineered-for-simplicity/</guid>
+      <description>&lt;p&gt;When it comes to candidate technical tests when scaling out technology teams, it&amp;rsquo;s been said that there are no good solutions, only trade-offs - most of the&#xA;accepted procedures in use at companies seem to just succeed in focussing in on the wrong things, or frustrating both the candidates and hiring teams in terms&#xA;of the time commitment and hit rate of good hires. But what if there was a better way? A method that&amp;rsquo;s fair, efficient, and actually shows you how a candidate&#xA;thinks and works?&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

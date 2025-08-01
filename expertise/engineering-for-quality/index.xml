@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Engineering-for-Quality on Clockwork</title>
+    <link>http://localhost:1313/expertise/engineering-for-quality/</link>
+    <description>Recent content in Engineering-for-Quality on Clockwork</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jul 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/expertise/engineering-for-quality/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lockdown: Fortify your API contracts with Approval testing</title>
+      <link>http://localhost:1313/post/lockdown-fortify-your-api-contracts-wth-openapi-and-approval-tests/</link>
+      <pubDate>Mon, 01 Jul 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/lockdown-fortify-your-api-contracts-wth-openapi-and-approval-tests/</guid>
+      <description>&lt;h3 id=&#34;tldr&#34;&gt;TL;DR&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;“Storing API contracts as OpenAPI approval files in source control allows safer control over accidental changes.”&lt;/strong&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;hr/&gt;&#xA;&lt;h3 id=&#34;controlling-api-evolution&#34;&gt;Controlling API Evolution&lt;/h3&gt;&#xA;&lt;p&gt;API development often faces challenges related to versioning and evolution. Ensuring that APIs can change without breaking existing clients or that code changes&#xA;do not unintentionally alter an API is crucial. This problem arises in various contexts, whether it’s between a browser and a service, service-to-service, or&#xA;asynchronous event formats.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Example post</title>
+      <link>http://localhost:1313/post/example/</link>
+      <pubDate>Sat, 01 Jan 2000 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/example/</guid>
+      <description>&lt;p&gt;Some content&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;./image.webp&#34; alt=&#34;example image!&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

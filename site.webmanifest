@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <browserconfig>
+      <msapplication>
+        <tile>
+          <square70x70logo src="https://clockwork.ing/smalltile.png"/>
+          <square150x150logo src="https://clockwork.ing/mediumtile.png"/>
+          <wide310x150logo src="https://clockwork.ing/widetile.png"/>
+          <square310x310logo src="https://clockwork.ing/largetile.png"/>
+          <TileColor><no value></TileColor>
+        </tile>
+      </msapplication>
+    </browserconfig>

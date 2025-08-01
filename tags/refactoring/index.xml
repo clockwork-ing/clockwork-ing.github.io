@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Refactoring on Clockwork</title>
+    <link>http://localhost:1313/tags/refactoring/</link>
+    <description>Recent content in Refactoring on Clockwork</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 01 Jun 2021 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/refactoring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Refactoring Kotlin type-signatures for fun and profit</title>
+      <link>http://localhost:1313/post/refactoring-type-signatures-for-fun-and-profit/</link>
+      <pubDate>Tue, 01 Jun 2021 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/post/refactoring-type-signatures-for-fun-and-profit/</guid>
+      <description>&lt;h3 id=&#34;tldr&#34;&gt;tl;dr&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;strong&gt;&amp;ldquo;You can apply simple refactoring and functional techniques such as substitution and currying to refine function signatures. Free of any implementation&#xA;detail, defining system concepts in this way can be a refreshingly powerful technique.&amp;rdquo;&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
